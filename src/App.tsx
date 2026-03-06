@@ -232,15 +232,13 @@ export default function App() {
               className="flex-1 order-1 lg:order-2 w-full flex justify-center"
             >
               <div className="relative w-full max-w-sm">
-                <div className="relative w-full aspect-[3/4] bg-primary rounded-xl shadow-2xl overflow-hidden flex flex-col items-center justify-center p-8 sm:p-10 border-4 border-white transform rotate-3 hover:rotate-0 transition-transform cursor-pointer">
-                  <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #fff 10%, transparent 10%)', backgroundSize: '20px 20px' }}></div>
-                  <span className="material-symbols-outlined text-accent text-6xl sm:text-8xl mb-4" style={{ fontVariationSettings: "'FILL' 1" }}>water_drop</span>
-                  <h3 className="text-white text-2xl sm:text-3xl font-black text-center mb-2">SURVIVAL GUIDE</h3>
-                  <div className="h-1 w-16 sm:w-20 bg-accent mb-4"></div>
-                  <p className="text-white/80 text-center font-bold uppercase tracking-widest text-xs sm:text-sm">WATER AND PREPARATION</p>
-                  <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6">
-                    <span className="text-white/20 text-4xl sm:text-6xl font-black">EBOOK</span>
-                  </div>
+                <div className="relative w-full aspect-[3/4] rounded-xl shadow-2xl overflow-hidden border-4 border-white transform rotate-3 hover:rotate-0 transition-transform cursor-pointer bg-slate-200">
+                  <img 
+                    src="https://i.postimg.cc/LmJ1fH82/COMPLETE-WATER-GUIDE-FOR-SURVIVAL.png" 
+                    alt="Complete Water Guide for Survival" 
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-accent text-primary p-3 sm:p-4 rounded-xl shadow-xl font-bold z-10">
                   <p className="text-[10px] sm:text-xs uppercase">2026 Edition</p>
