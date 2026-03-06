@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 
 function FAQItem({ question, answer }: { question: string, answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,9 +38,9 @@ export default function App() {
           <a className="text-sm font-semibold hover:text-primary transition-colors" href="#depoimentos">Testimonials</a>
           <a className="text-sm font-semibold hover:text-primary transition-colors" href="#faq">FAQ</a>
         </nav>
-        <button className="bg-primary text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg text-xs sm:text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 cursor-pointer">
+        <a href="https://pay.hotmart.com/I104772370R?checkoutMode=10" target="_blank" rel="noopener noreferrer" className="bg-primary text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg text-xs sm:text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 cursor-pointer inline-block">
           BUY NOW
-        </button>
+        </a>
       </header>
 
       {/* Hero Section */}
@@ -52,7 +53,13 @@ export default function App() {
             backgroundPosition: 'center' 
           }}
         ></div>
-        <div className="relative z-10 container mx-auto px-6 lg:px-40 text-center max-w-5xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative z-10 container mx-auto px-6 lg:px-40 text-center max-w-5xl"
+        >
           <span className="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-accent/30">
             Attention: Preparation is Survival
           </span>
@@ -63,26 +70,38 @@ export default function App() {
             Discover the definitive method to ensure infinite and safe drinking water, even in collapse scenarios, severe droughts, or natural disasters.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto bg-accent text-primary px-4 py-4 sm:px-8 sm:py-5 rounded-xl text-sm sm:text-lg font-black hover:scale-105 transition-transform shadow-2xl shadow-accent/20 flex items-center justify-center gap-2 cursor-pointer">
+            <a href="https://pay.hotmart.com/I104772370R?checkoutMode=10" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-accent text-primary px-4 py-4 sm:px-8 sm:py-5 rounded-xl text-sm sm:text-lg font-black hover:scale-105 transition-transform shadow-2xl shadow-accent/20 flex items-center justify-center gap-2 cursor-pointer">
               <span className="material-symbols-outlined">security</span>
               I WANT TO PROTECT MY FAMILY NOW
-            </button>
+            </a>
           </div>
           <p className="mt-6 text-xs sm:text-sm text-slate-300 flex items-center justify-center gap-2">
             <span className="material-symbols-outlined text-sm">verified_user</span>
             Immediate access after payment
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Pain Points Section */}
       <section className="py-20 bg-background-light" id="riscos">
         <div className="container mx-auto px-6 lg:px-40">
-          <div className="text-center mb-12 sm:mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12 sm:mb-16"
+          >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary mb-4">The risks you cannot ignore</h2>
             <div className="h-1.5 w-24 bg-accent mx-auto rounded-full"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
             {/* Card 1 */}
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow group">
               <div className="w-full h-48 bg-slate-200 rounded-xl mb-6 overflow-hidden">
@@ -135,14 +154,20 @@ export default function App() {
               <h3 className="text-xl font-bold text-primary mb-2">Waterborne Diseases</h3>
               <p className="text-primary leading-relaxed">The invisible danger: bacteria and parasites that proliferate in stagnant water.</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Statistics Section */}
       <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-6 lg:px-40">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
             <div className="text-center p-8 border border-white/10 rounded-2xl bg-white/5">
               <div className="text-5xl font-black text-accent mb-2">3-5</div>
               <p className="text-lg font-bold">Days of survival</p>
@@ -158,7 +183,7 @@ export default function App() {
               <p className="text-lg font-bold">Without Drinking Water</p>
               <p className="text-slate-400 text-sm mt-2">People in the world who already live the real risk of water scarcity today.</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -166,7 +191,13 @@ export default function App() {
       <section className="py-20 bg-white" id="conteudo">
         <div className="container mx-auto px-6 lg:px-40">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-            <div className="flex-1 order-2 lg:order-1">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+              className="flex-1 order-2 lg:order-1"
+            >
               <span className="text-water-blue font-bold tracking-widest uppercase text-sm">Complete Content</span>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mt-4 mb-6">What you will master with this Guide</h2>
               <ul className="space-y-6">
@@ -192,8 +223,14 @@ export default function App() {
                   </div>
                 </li>
               </ul>
-            </div>
-            <div className="flex-1 order-1 lg:order-2 w-full flex justify-center">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex-1 order-1 lg:order-2 w-full flex justify-center"
+            >
               <div className="relative w-full max-w-sm">
                 <div className="relative w-full aspect-[3/4] bg-primary rounded-xl shadow-2xl overflow-hidden flex flex-col items-center justify-center p-8 sm:p-10 border-4 border-white transform rotate-3 hover:rotate-0 transition-transform cursor-pointer">
                   <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #fff 10%, transparent 10%)', backgroundSize: '20px 20px' }}></div>
@@ -210,7 +247,7 @@ export default function App() {
                   <p className="text-lg sm:text-xl leading-tight">100% Digital</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -218,8 +255,22 @@ export default function App() {
       {/* Audience Section */}
       <section className="py-20 bg-background-light">
         <div className="container mx-auto px-6 lg:px-40 text-center">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-primary mb-12">Who is this guide essential for?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl sm:text-3xl font-extrabold text-primary mb-12"
+          >
+            Who is this guide essential for?
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
               <span className="material-symbols-outlined text-4xl text-water-blue mb-4">family_restroom</span>
               <h4 className="font-bold text-xl mb-3">Families</h4>
@@ -235,15 +286,29 @@ export default function App() {
               <h4 className="font-bold text-xl mb-3">Preppers</h4>
               <p className="text-primary">Beginner or advanced preppers who know that water is pillar number 1.</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Social Proof */}
       <section className="py-20 bg-white" id="depoimentos">
         <div className="container mx-auto px-6 lg:px-40">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-primary text-center mb-12 sm:mb-16">Who is already prepared</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl sm:text-3xl font-extrabold text-primary text-center mb-12 sm:mb-16"
+          >
+            Who is already prepared
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
             <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100">
               <div className="flex gap-1 text-accent mb-4">
                 <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
@@ -313,26 +378,32 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Pricing Section */}
       <section className="py-16 sm:py-24 bg-primary text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-40 max-w-4xl">
-          <div className="bg-white text-primary rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="bg-white text-primary rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden"
+          >
             <div className="absolute top-0 right-0 bg-accent text-primary px-8 py-1 sm:px-10 sm:py-2 text-xs sm:text-base font-black rotate-45 translate-x-8 translate-y-3 sm:translate-x-10 sm:translate-y-4">OFFER</div>
             <div className="text-center">
               <h3 className="text-xl sm:text-2xl font-bold mb-4">Invest in your family's safety today</h3>
-              <p className="text-primary line-through text-base sm:text-lg">From $97.00</p>
+              <p className="text-primary line-through text-base sm:text-lg">From $27.00</p>
               <div className="flex items-center justify-center gap-2 mb-6 sm:mb-8">
                 <span className="text-lg sm:text-xl font-bold">$</span>
-                <span className="text-6xl sm:text-7xl font-black text-primary">47</span>
+                <span className="text-6xl sm:text-7xl font-black text-primary">9</span>
                 <span className="text-xl sm:text-2xl font-bold">.00</span>
               </div>
-              <button className="w-full bg-accent text-primary py-4 sm:py-6 rounded-2xl text-base sm:text-xl font-black shadow-xl hover:scale-105 transition-transform mb-6 cursor-pointer">
+              <a href="https://pay.hotmart.com/I104772370R?checkoutMode=10" target="_blank" rel="noopener noreferrer" className="w-full bg-accent text-primary py-4 sm:py-6 rounded-2xl text-base sm:text-xl font-black shadow-xl hover:scale-105 transition-transform mb-6 cursor-pointer block text-center">
                 I WANT TO PROTECT MY FAMILY NOW
-              </button>
+              </a>
               <div className="flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8 mt-8 sm:mt-10">
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-green-600 text-3xl sm:text-4xl">verified</span>
@@ -350,15 +421,29 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="py-20 bg-background-light" id="faq">
         <div className="container mx-auto px-6 lg:px-40 max-w-4xl">
-          <h2 className="text-3xl font-extrabold text-primary text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-4">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-extrabold text-primary text-center mb-12"
+          >
+            Frequently Asked Questions
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-4"
+          >
             <FAQItem 
               question="How will I receive the content?" 
               answer="Access is immediate. Once payment is confirmed, you will receive a download link in your registered email." 
@@ -371,7 +456,7 @@ export default function App() {
               question="Is the guide suitable for those living in an apartment?" 
               answer="Absolutely. We have an exclusive chapter on compact and efficient storage for limited spaces." 
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
